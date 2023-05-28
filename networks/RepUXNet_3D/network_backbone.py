@@ -282,7 +282,7 @@ class REPUXNET(nn.Module):
         return x
     
     def forward(self, x_in):
-        outs = self.uxnet_3d(x_in)
+        outs = self.repuxnet_3d(x_in)
         # print(outs[0].size())
         # print(outs[1].size())
         # print(outs[2].size())

@@ -3,6 +3,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from timm.models.layers import trunc_normal_, DropPath
 from functools import partial
+import numpy as np
+from scipy.spatial import distance
 
 class LayerNorm(nn.Module):
     r""" LayerNorm that supports two data formats: channels_last (default) or channels_first.
@@ -117,10 +119,11 @@ class repuxnet_conv(nn.Module):
         self.stages = nn.ModuleList()
         dp_rates = [x.item() for x in torch.linspace(0, drop_path_rate, sum(depths))]
         cur = 0
+        self.deploy = deploy
         for i in range(4):
             stage = nn.Sequential(
                 *[repux_block(dim=dims[i], ks=ks, a=a, drop_path=dp_rates[cur + j],
-                        layer_scale_init_value=layer_scale_init_value) for j in range(depths[i]), deploy=False]
+                        layer_scale_init_value=layer_scale_init_value, deploy=self.deploy) for j in range(depths[i])]
             )
             self.stages.append(stage)
             cur += depths[i]
