@@ -7,7 +7,7 @@ Please check [INSTALL.md](INSTALL.md) for installation instructions first.
 3D RepUX-Net training on FLARE/AMOS with a single GPU:
 ```
 python main_train.py --root root_folder_path --output output_folder_path \
---dataset flare/amos --network RepUXNET --mode train --pretrain False \
+--dataset flare/amos --network REPUXNET --mode train --pretrain False \
 --batch_size 1 --crop_sample 2 --lr 0.0001 --optim AdamW --max_iter 60000 \ 
 --eval_step 500 --gpu 0 --cache_rate 0.2 --num_workers 2
 ```
