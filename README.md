@@ -47,7 +47,7 @@ We propose **3D RepUX-Net**, a pure volumetric convolutional network that effect
 
 
  ### AMOS 2022 Models (T.F.S: Train From Scratch, F.T: Fine-Tuning)
- | Methods | resolution | #params | FLOPs | Mean Dice (T.F.S) | Mean Dice (F.T)
+ | Methods | resolution | #params | FLOPs | Mean Dice (T.F.S) with weights| Mean Dice (F.T)
 |:---:|:---:|:---:|:---:| :---:| :---:|
 | nn-UNet | 96x96x96 | 31.2M | 743.3G | 0.850 | 0.878 |
 | TransBTS | 96x96x96 | 31.6M | 110.4G | 0.783 | 0.792 |
@@ -56,7 +56,7 @@ We propose **3D RepUX-Net**, a pure volumetric convolutional network that effect
 | SwinUNETR | 96x96x96 | 62.2M | 328.4G | 0.871 |  0.880|
 | 3D UX-Net (k=7) | 96x96x96 | 53.0M | 639.4G | 0.890 | 0.900|
 | 3D UX-Net (k=21) | 96x96x96 | 65.9M | 757.6G | 0.891 | 0.898|
-| 3D RepUX-Net | 96x96x96 | 65.8M | 757.4G | 0.902 | 0.911 |
+| 3D RepUX-Net | 96x96x96 | 65.8M | 757.4G | 0.902 ([Weights](https://drive.google.com/drive/folders/1ri_2tTVEB4RJQYegI5fh7F5TIBN9T4Is?usp=sharing)) | 0.911 |
 
  ### External Testing of FLARE-trained Model with 4 Different Datasets 
  | Methods | MSD Spleen | KiTS Kidney | LiTS Liver | TCIA Pancreas |
